@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-// https://avatars.githubusercontent.com/u/76920706
-
 function User({ user, href }: { user: UserI; href?: string }) {
   return (
     <div>
