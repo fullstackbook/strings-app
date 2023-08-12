@@ -1,21 +1,22 @@
+import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 import { useSWRConfig } from "swr";
 
-function Form() {
+function Form({ post }: { post: PostI }) {
+  const router = useRouter();
   const { mutate } = useSWRConfig();
-  const [post, setPost] = useState("");
+  const [content, setContent] = useState(post.content);
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
 
-    const res = await fetch("/api/posts", {
-      method: "POST",
-      body: JSON.stringify({ content: post }),
+    const res = await fetch("/api/posts/" + post.id, {
+      method: "PATCH",
+      body: JSON.stringify({ content: content }),
     });
-
     if (res.ok) {
-      setPost("");
-      mutate((key) => typeof key === "string" && key.startsWith("/api/posts"));
+      setContent("");
+      router.push("/profile");
     }
   }
 
@@ -24,11 +25,11 @@ function Form() {
       <textarea
         className="bg-gray-700 p-2 rounded-lg w-full my-2"
         placeholder="What is happening?"
-        onChange={(e) => setPost(e.target.value)}
-        value={post}
+        onChange={(e) => setContent(e.target.value)}
+        value={content}
       />
       <button type="submit" className="bg-slate-900 p-2 rounded-lg">
-        Post
+        Update Post
       </button>
     </form>
   );
