@@ -5,6 +5,7 @@ import Footer from "./footer";
 import Header from "./header";
 import NavBar from "./navbar";
 import fetcher from "../util/fetcher";
+import SearchBar from "./search-bar";
 
 export default function PrivateLayout({
   children,
@@ -14,6 +15,7 @@ export default function PrivateLayout({
   return (
     <SWRConfig value={{ fetcher: fetcher }}>
       <div className="flex flex-col min-h-screen max-w-md m-auto items-center justify-center">
+        <SearchBar />
         <Header />
         <NavBar />
         <main className="w-full p-5 bg-slate-800 rounded-lg my-2">
