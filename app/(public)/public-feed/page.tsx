@@ -17,7 +17,7 @@ export default async function PublicFeed() {
       <div>
         <h2>Recent Posts From the Community</h2>
         {posts.map((post) => {
-          return <Post post={post} />;
+          return <Post post={post} key={post.id} />;
         })}
       </div>
     </main>
