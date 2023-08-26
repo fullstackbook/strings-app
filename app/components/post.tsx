@@ -36,7 +36,7 @@ function Post({ post, showEditBtn }: { post: PostI; showEditBtn?: boolean }) {
         <div className="font-bold">
           <Link href={`/${post.username}`}>{post.username}</Link>
         </div>
-        <div className="text-slate-400">
+        <div className="text-slate-600">
           {createdAt.toLocaleDateString("en-us", options)}
         </div>
         <div>{post.content}</div>
@@ -45,7 +45,7 @@ function Post({ post, showEditBtn }: { post: PostI; showEditBtn?: boolean }) {
         <div className="text-right flex-grow">
           <Link
             href={`/profile/edit-post/${post.id}`}
-            className="text-green-400"
+            className="dark:text-green-400 text-green-800"
           >
             Edit
           </Link>

@@ -18,7 +18,7 @@ export default function PrivateLayout({
         <SearchBar />
         <Header />
         <NavBar />
-        <main className="w-full p-5 bg-slate-800 rounded-lg my-2">
+        <main className="w-full p-5 dark:bg-slate-800 bg-slate-300 rounded-lg my-2">
           {children}
         </main>
         <Footer />

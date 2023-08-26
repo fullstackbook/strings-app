@@ -15,7 +15,7 @@ function FollowingContainer() {
       <div className="flex justify-center w-full">
         <button
           onClick={() => setCnt(cnt + 1)}
-          className="bg-slate-900 p-2 rounded-lg"
+          className="dark:bg-slate-900 bg-slate-400 p-2 rounded-lg"
         >
           Load More
         </button>
