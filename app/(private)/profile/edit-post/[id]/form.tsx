@@ -21,7 +21,7 @@ function Form({ post }: { post: PostI }) {
   return (
     <form onSubmit={handleSubmit}>
       <textarea
-        className="bg-white text-black p-2 rounded-lg w-full my-2"
+        className="dark:bg-slate-600 dark:text-white bg-white text-black p-2 rounded-lg w-full my-2"
         placeholder="What is happening?"
         onChange={(e) => setContent(e.target.value)}
         value={content}

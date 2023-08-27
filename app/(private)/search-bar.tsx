@@ -55,7 +55,7 @@ export default function SearchBar() {
         onChange={handleChange}
         onClick={handleClick}
         type="text"
-        className="p-2 rounded-lg bg-white text-black my-2 max-w-xs"
+        className="p-2 rounded-lg dark:bg-slate-600 dark:text-white bg-white text-black my-2 max-w-xs"
         placeholder="Search"
       />
       {visible && searchResults.length > 0 && (
